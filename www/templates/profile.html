@@ -1,0 +1,23 @@
+<ion-view view-title="Perfil - Somos Global">
+    <ion-content ng-class="{expanded:$scope.isExpanded}" ng-controller="ProfileCtrl">
+        
+              <div>
+                <ion-list>
+                    <div class="item item-avatar">
+                        <img ng-src="{{profileData.pic}}">
+                        <h2 class="padding">{{profileData.name}}</h2>
+                        <p class="padding">Usted no posee puntos</p>
+                        <p>Se encuentra en:</p>
+                        <p>Latitud {{lat}}</p>
+                        <p>Longitud {{long}}</p>
+                    </div>
+                </ion-list>
+                </div>
+               
+                <div id="map" data-tap-disabled="true"></div>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="bar-positive">
+        <!--<h3 class="title">Somos Global</h3>-->
+    </ion-footer-bar>
+
+</ion-view>
