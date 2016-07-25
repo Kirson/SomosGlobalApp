@@ -19,7 +19,7 @@
         <ion-content class="stable-bg has-expanded-header">
         <!-- our list and list items -->
         <ion-list ng-controller="MenuCtrl">
-          <ion-item ng-repeat="task in tasks" href="{{task.url}}">
+          <ion-item ng-repeat="task in tasks" href="{{task.url}}" menu-close >
             {{task.title}}
           </ion-item>
         </ion-list>
