@@ -18,9 +18,11 @@ var products = JSON.parse( "["+str +"]" );
     name: 'Bela Express: Pedicure',
     logoId: '1',
     catId: '2',
-    img1: 'img/category/products/BelaExpress1_2/imagen1.jpg',
-    img2: 'img/category/products/BelaExpress1_2/imagen2.jpg',
-    img3: 'img/category/products/BelaExpress1_2/imagen3.jpg',
+    img: 
+    ['img/category/products/BelaExpress1_2/imagen1.jpg',
+    'img/category/products/BelaExpress1_2/imagen2.jpg',
+    'img/category/products/BelaExpress1_2/imagen3.jpg']
+    ,
     cost: '40',
     unit: 'ptos'
   },
@@ -29,9 +31,11 @@ var products = JSON.parse( "["+str +"]" );
     name: 'Carolina Inn',
     logoId: '6',
     catId: '6',
-    img1: 'img/category/products/CarolinaInn6_6/imagen1.jpg',
-    img2: 'img/category/products/CarolinaInn6_6/imagen2.jpg',
-    img3: 'img/category/products/CarolinaInn6_6/imagen3.jpg',
+    img: 
+    ['img/category/products/CarolinaInn6_6/imagen1.jpg',
+    'img/category/products/CarolinaInn6_6/imagen2.jpg',
+    'img/category/products/CarolinaInn6_6/imagen3.jpg']
+    ,
     cost: '35',
     unit: 'ptos'
   },
@@ -40,9 +44,11 @@ var products = JSON.parse( "["+str +"]" );
     name: 'Chakra',
     logoId: '4',
     catId: '1',
-    img1: 'img/category/products/Chakra4_1/imagen1.jpg',
-    img2: 'img/category/products/Chakra4_1/imagen2.jpg',
-    img3: 'img/category/products/Chakra4_1/imagen3.jpg',
+    img: 
+    ['img/category/products/Chakra4_1/imagen1.jpg',
+    'img/category/products/Chakra4_1/imagen2.jpg',
+    'img/category/products/Chakra4_1/imagen3.jpg']
+    ,
     cost: '100',
     unit: 'ptos'
   }
@@ -52,9 +58,11 @@ var products = JSON.parse( "["+str +"]" );
     name: 'Clinica Primavera',
     logoId: '20',
     catId: '1',
-    img1: 'img/category/products/ClinicaPrimavera20_1/imagen1.jpg',
-    img2: 'img/category/products/ClinicaPrimavera20_1/imagen2.jpg',
-    img3: 'img/category/products/ClinicaPrimavera20_1/imagen3.jpg',
+    img: 
+    ['img/category/products/ClinicaPrimavera20_1/imagen1.jpg',
+    'img/category/products/ClinicaPrimavera20_1/imagen2.jpg',
+    'img/category/products/ClinicaPrimavera20_1/imagen3.jpg']
+    ,
     cost: '20000',
     unit: 'ptos'
   }
@@ -64,9 +72,11 @@ var products = JSON.parse( "["+str +"]" );
     name: 'DrCelular',
     logoId: '8',
     catId: '4',
-    img1: 'img/category/products/DrCelular8_4/imagen1.jpg',
-    img2: 'img/category/products/DrCelular8_4/imagen2.jpg',
-    img3: 'img/category/products/DrCelular8_4/imagen3.jpg',
+    img: 
+    ['img/category/products/DrCelular8_4/imagen1.jpg',
+    'img/category/products/DrCelular8_4/imagen2.jpg',
+    'img/category/products/DrCelular8_4/imagen3.jpg']
+    ,
     cost: '5000',
     unit: 'ptos'
   }
@@ -76,9 +86,11 @@ var products = JSON.parse( "["+str +"]" );
     name: 'Parrillon',
     logoId: '5',
     catId: '0',
-    img1: 'img/category/products/Parrillon5_0/imagen1.jpg',
-    img2: 'img/category/products/Parrillon5_0/imagen2.jpg',
-    img3: 'img/category/products/Parrillon5_0/imagen3.jpg',
+    img: 
+    ['img/category/products/Parrillon5_0/imagen1.jpg',
+    'img/category/products/Parrillon5_0/imagen2.jpg',
+    'img/category/products/Parrillon5_0/imagen3.jpg']
+    ,
     cost: '5600',
     unit: 'ptos'
   }
@@ -88,9 +100,11 @@ var products = JSON.parse( "["+str +"]" );
     name: 'Chosen Bar',
     logoId: '17',
     catId: '0',
-    img1: 'img/category/products/ChosenBar17_0/imagen1.jpg',
-    img2: 'img/category/products/ChosenBar17_0/imagen2.jpg',
-    img3: 'img/category/products/ChosenBar17_0/imagen3.jpg',
+    img: 
+    ['img/category/products/ChosenBar17_0/imagen1.jpg',
+    'img/category/products/ChosenBar17_0/imagen2.jpg',
+    'img/category/products/ChosenBar17_0/imagen3.jpg']
+    ,
     cost: '13000',
     unit: 'ptos'
   },
@@ -99,9 +113,11 @@ var products = JSON.parse( "["+str +"]" );
     name: 'Tiendas Evelyn',
     logoId: '27',
     catId: '0',
-    img1: 'img/category/products/Evelyn27_3/imagen4.jpg',
-    img2: 'img/category/products/Evelyn27_3/imagen2.jpg',
-    img3: 'img/category/products/Evelyn27_3/imagen3.jpg',
+    img: 
+    ['img/category/products/Evelyn27_3/imagen1.jpg',
+    'img/category/products/Evelyn27_3/imagen2.jpg',
+    'img/category/products/Evelyn27_3/imagen3.jpg']
+    ,
     cost: '9900',
     unit: 'ptos'
   }

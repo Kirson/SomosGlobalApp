@@ -7,14 +7,15 @@
                 </ion-content>
             </div>
             <div ng-show="{{hasProducts}}">
-                <div class="row" ><!-- ng-repeat="product in products"--> 
+
+                <div class="row" ng-repeat="imgs in product.img"> 
                     <div class="column" >
                         <div class="card" >
                             <div class="item item-text-wrap" >
      
                                 <div class="item item-body">
                                     <h2>{{product.name}}</h2>
-                                    <img class="full-image" src="{{product.img1}}">
+                                    <img class="full-image" src="{{product.img[$index]}}">
                                     <!--<img class="full-image" src="{{product.img2}}">
                                     <img class="full-image" src="{{product.img3}}">-->
                                     <p>

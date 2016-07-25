@@ -72,8 +72,16 @@ p {
     display: block;
     margin: 5px 25px 5px 25px;
 }*/
+.button-container{
+position: initial;
+}
 .social-login {
-    position: fixed;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
     /*bottom: 0;*/
 }
 

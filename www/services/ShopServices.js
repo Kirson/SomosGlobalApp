@@ -18,6 +18,22 @@ var shops = JSON.parse( "["+str +"]" );
     catId: '2',
     img : 'img/category/logos/logo1.jpg'
   },
+
+  {
+    id: 2,
+    name: 'Sur Parrilla Gourmet',
+    logoId: '2',
+    catId: '0',
+    img : 'img/category/logos/logo2.jpg'
+  },
+
+  {
+    id: 3,
+    name: 'Fitness Factory',
+    logoId: '3',
+    catId: '2',
+    img : 'img/category/logos/logo3.jpg'
+  },
   {
     id: 6,
     name: 'Carolina Inn',
@@ -31,8 +47,14 @@ var shops = JSON.parse( "["+str +"]" );
     logoId: '4',
     catId: '1',
     img : 'img/category/logos/logo4.jpg'
-  }
-  ,
+  },
+  {
+    id: 7,
+    name: 'Win Cleaners',
+    logoId: '7',
+    catId: '4',
+    img : 'img/category/logos/logo7.jpg'
+  },
   {
     id: 20,
     name: 'Clinica Primavera',
@@ -77,8 +99,85 @@ var shops = JSON.parse( "["+str +"]" );
     logoId: '27',
     catId: '3',
     img : 'img/category/logos/logo27.jpg'
-  }
-    
+  },
+  {
+    id: 9,
+    name: 'Hospital Inglés',
+    logoId: '9',
+    catId: '1',
+    img : 'img/category/logos/logo9.jpg'
+  },
+    {
+    id: 10,
+    name: 'Redux Clínica Estética',
+    logoId: '10',
+    catId: '2',
+    img : 'img/category/logos/logo10.jpg'
+  },
+  {
+    id: 11,
+    name: 'Torres y Torres',
+    logoId: '11',
+    catId: '4',
+    img : 'img/category/logos/logo11.jpg'
+  },
+  {
+    id: 12,
+    name: 'Coaching de Mentalidad',
+    logoId: '12',
+    catId: '4',
+    img : 'img/category/logos/logo12.jpg'
+  },
+  {
+    id: 13,
+    name: 'Sol Blanco',
+    logoId: '13',
+    catId: '4',
+    img : 'img/category/logos/logo13.jpg'
+  },
+  {
+    id: 14,
+    name: 'Scissors',
+    logoId: '14',
+    catId: '2',
+    img : 'img/category/logos/logo14.jpg'
+  },
+  {
+    id: 15,
+    name: 'Revista Vive Light',
+    logoId: '15',
+    catId: '4',
+    img : 'img/category/logos/logo15.jpg'
+  },
+  {
+    id: 16,
+    name: 'San Telmo',
+    logoId: '16',
+    catId: '0',
+    img : 'img/category/logos/logo16.jpg'
+  },
+  {
+    id: 18,
+    name: 'De Morfi',
+    logoId: '18',
+    catId: '0',
+    img : 'img/category/logos/logo18.jpg'
+  },
+  {
+    id: 19,
+    name: 'Los Troncos',
+    logoId: '19',
+    catId: '0',
+    img : 'img/category/logos/logo19.jpg'
+  },
+  {
+    id: 21,
+    name: 'Somos Global',
+    logoId: '21',
+    catId: '4',
+    img : 'img/category/logos/logo1.jpg'
+  },
+  
   ];
 
   return {
