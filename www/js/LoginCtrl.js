@@ -1,8 +1,7 @@
 angular.module('starter.LoginCtrl', [])
 .controller('LoginCtrl', function($scope,$rootScope,$stateParams, $location,$cordovaFacebook, $cordovaGooglePlus, $ionicLoading,$cordovaGeolocation) {
  console.log("login ctrl ");
- 	$scope.fb = function () {
-            console.log("fb login");
+ 	$scope.visitanteLogin = function () {
                     $location.path('/app/category');
  }
 

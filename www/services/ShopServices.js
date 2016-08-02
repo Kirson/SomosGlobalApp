@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('starter.ShopServices', [])
-.factory('Shops', function() {
+.factory('Shops', function($http) {
 /*
 var str ="";
 for (var i = 1; i < 21; i++) {
@@ -11,7 +11,8 @@ str += str +' { "id": "21", "name": "Local 21", "img": "img/category/logos/logo2
 
 var shops = JSON.parse( "["+str +"]" );  
 */
-  var shops = [{
+  var shops = null
+  /*[{
     id: 1,
     name: 'Bela Express',
     logoId: '1',
@@ -178,7 +179,7 @@ var shops = JSON.parse( "["+str +"]" );
     img : 'img/category/logos/logo1.jpg'
   },
   
-  ];
+  ];*/
 
   return {
 
@@ -195,6 +196,16 @@ var shops = JSON.parse( "["+str +"]" );
         }
       }
       return null;
-    }
+    },
+     getLocales: function(shopId){
+      // return $http.get("http://localhost:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria", {
+        return $http.get("http://localhost:8080/SomosGlobal/webresources/com.somosglobal.rest.actor/actor/"+shopId
+              ).then(function(response){
+                console.log(response.data);
+        shops = response.data;
+        return shops;
+      });
+    },
   };
 });
+

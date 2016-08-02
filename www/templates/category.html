@@ -3,10 +3,10 @@
         <!-- <div class="content has-header"> -->
             <ion-list>
                 <ion-item ng-repeat="category in categories" 
-                            class="item-icon-left" href="#/app/{{category.name}}/id/{{category.id}}">
-                        <i class = "{{category.ico}}"></i>
-                        <h2>{{category.name}}</h2>
-                        <p> {{category.deseg}}</p>
+                            class="item-icon-left" href="#/app/{{url}}/{{category.catId}}"><!-- href="#/app/{{category.name}}/id/{{category.catid}}">-->
+                        <i class = "{{category.catimagen}}"></i>
+                        <h2>{{category.catNombre}}</h2>
+                        <p> {{category.catNombre}}</p>
                 </ion-item>
             </ion-list>
         <!-- </div> -->

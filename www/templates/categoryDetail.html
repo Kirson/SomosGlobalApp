@@ -8,17 +8,19 @@
             </div>
 
             <div class="row"  ng-repeat="shops in chunkedData">
-                  <div class="col-50" ng-repeat="shop in shops">
+                <div class="col-50" ng-repeat="shop in shops">
                     <div class="card" >
                         <div class="item item-text-wrap" >
 
                             
                             <div class="item item-body">
-                                <h2>{{shop.name}}</h2>
-                                <a href="#/app/shop/{{shop.id}}">
-                                <img class="full-image" src="{{shop.img}}" >
+                                <h2>{{shop.razonSocialAct}}</h2>
+                                <a href="#/app/shop/{{shop.idAct}}">
+                                <img class="full-image" src="{{shop.logoAct}}" >
                                 </a>
-                                <p>Informacion Adicional</p>
+                                
+                                <p>{{shop.sloganAct}}</p>
+                                <p>{{shop.servicioAct}}</p>
                                 <!--
                                 <p>
                                     <a href="#" class="subdued">1 Like</a>

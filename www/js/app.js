@@ -75,8 +75,19 @@ console.log("config");
         }
     })
 
+    .state('app.subcategory', {
+        url: '/subcategory/:catId',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/category.html',
+                controller: 'CategoryCtrl'
+            }
+
+        }
+    })
+
     .state('app.categoryDetail', {
-        url: '/:catName/id/:catId',
+        url: '/sucategoryDetail/:catId',
         views: {
             'menuContent': {
                 templateUrl: 'templates/categoryDetail.html',

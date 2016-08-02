@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('starter.CategoryServices', [])
-.factory('Categories', function() {
-
+.factory('Categories', function($http) {
+var categories;
+/*
   var categories = [{
     id: 0,
     name: 'Comidas y Bebidas',
@@ -52,10 +53,62 @@ angular.module('starter.CategoryServices', [])
     face: 'img/category/vac.png',
     ico: 'icon ion ion-android-train'
   }];
-
+*/
   return {
     all: function() {
       return categories;
+    },
+
+    getCategories: function(){
+      // return $http.get("http://localhost:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria", {
+        return $http.get("http://192.168.0.103:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria"
+          // , {
+          //       headers: {
+          //           'Content-Type': 'application/json' , 
+          //           'Access-Control-Allow-Origin': '*',
+          //           'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+          //           'Access-Control-Allow-Headers':'X-Requested-With' 
+          //       }
+          //     }
+              ).then(function(response){
+                console.log(response.data);
+        categories = response.data;
+        return categories;
+      });
+    },
+    getSubCategoriesNivel1: function(catId){
+      // return $http.get("http://localhost:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria", {
+        return $http.get("http://192.168.0.103:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria/subcategory/1/"+catId
+          // , {
+          //       headers: {
+          //           'Content-Type': 'application/json' , 
+          //           'Access-Control-Allow-Origin': '*',
+          //           'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+          //           'Access-Control-Allow-Headers':'X-Requested-With' 
+          //       }
+          //     }
+              ).then(function(response){
+                console.log(response.data);
+        categories = response.data;
+        return categories;
+      });
+    },
+    getSubCategoriesNivel2: function(catId){
+      // return $http.get("http://localhost:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria", {
+        return $http.get("http://192.168.0.103:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria/subcategory/2/"+catId
+          // , {
+          //       headers: {
+          //           'Content-Type': 'application/json' , 
+          //           'Access-Control-Allow-Origin': '*',
+          //           'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+          //           'Access-Control-Allow-Headers':'X-Requested-With' 
+          //       }
+          //     }
+              ).then(function(response){
+                console.log(response.data);
+        categories = response.data;
+        return categories;
+      });
     },
     remove: function(id) {
       categories.splice(categories.indexOf(id), 1);
