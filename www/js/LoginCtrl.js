@@ -1,7 +1,11 @@
 angular.module('starter.LoginCtrl', [])
 .controller('LoginCtrl', function($scope,$rootScope,$stateParams, $location,$cordovaFacebook, $cordovaGooglePlus, $ionicLoading,$cordovaGeolocation, User) {
  console.log("login ctrl ");
- 	
+ 	$scope.login = function () {
+      $location.path('/app/profile');
+ }
+
+
   $scope.visitanteLogin = function () {
       $location.path('/app/category');
  }
@@ -35,10 +39,18 @@ $scope.register = function () {
         $scope.response =  response;
           console.log( "result " + $scope.response);
           // console.log(  $scope.categories );
+          $rootScope.user = {
+              nombre : '',
+              apellido: '',
+              userName : '',
+              password: '',
+              password2 :'',
+              correo:''
+          };
         
       });
       
-      // $location.path('app.profile');
+      $location.path('login');
    }
 
 
