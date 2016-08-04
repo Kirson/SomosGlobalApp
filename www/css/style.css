@@ -92,6 +92,9 @@ position: initial;
     color: white !important;
     width: 320px !important;
 }
+.link-white{
+ color : white;
+}
 .app-icon {
     background: url('../img/logo.png') center;
     background-size: cover;
