@@ -87,7 +87,11 @@ position: initial;
     */
     /*bottom: 0;*/
 }
-
+.input, .md-input{
+    background-color: rgba(0,0,0,.6);    
+    color: white !important;
+    width: 320px !important;
+}
 .app-icon {
     background: url('../img/logo.png') center;
     background-size: cover;

@@ -15,30 +15,28 @@
             <button class="button button-full button-positive ink" ng-click="loginUser(user);">Enviar</button>
             <button class="button button-full button-positive ink" ui-sref="app.register">Registrarse</button>
         </div-->
-       
-        
-        <!-- <div class="button-container">  -->
-            
-            <div class="social-login" >
-                <div class="button-container" align="center" >
-                    <input placeholder="Usuario" highlight-color="dark" ng-model="user.userName" type="text"/>
-                    <input placeholder="Clave" ng-model="user.password" type="password"/>
-                </div>
-                <button class="button button-small button-border button-positive " ng-click="login();">Log in</button>
+       <div class="social-login" >
+            <div class="button-container list" align="center" >
+                <input placeholder="Usuario" class="input" ng-model="user.userName" type="text"/>
                 </br>
-                </br>
-                </br>
-                <button class="button button-small button-border icon-left ion-social-facebook button-positive " ng-click="fbLogin();">Facebook</button>
-                </br>
-                </br>
-                <button class="button button-small button-border  button-positive " ng-click="visitanteLogin();">Visitante</button>
-                </br>
-                </br>
-                <a class="button button-small button-border  button-positive " ui-sref="app.register" >Nuevo Usuario</a><!--  -->
-                <!--<button class="button button-small button-border icon-left ion-social-google button-assertive-900" ng-click="googleLogin();">Google+</button>-->
+                <input placeholder="Clave" class="input" ng-model="user.password" type="password"/>
+                <!-- <ion-md-input placeholder="Usuario" class="input-size" ng-model="user.userName" type="text"></ion-md-input>
+                <ion-md-input placeholder="Clave" class="input-size" ng-model="user.password" type="password"></ion-md-input> -->
             </div>
-            
-        <!-- </div>  -->
+            <button class="button button-small button-border button-positive " ng-click="login();">Log in</button>
+            </br>
+            </br>
+            </br>
+            <button class="button button-small button-border icon-left ion-social-facebook button-positive " ng-click="fbLogin();">Facebook</button>
+            </br>
+            </br>
+            <button class="button button-small button-border  button-positive " ng-click="visitanteLogin();">Visitante</button>
+            </br>
+            </br>
+            <a class="button button-small button-border  button-positive " ui-sref="app.register" >Nuevo Usuario</a>
+        </div>
+        
+        
     </ion-content>
     
 </ion-view>
