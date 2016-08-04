@@ -1,9 +1,111 @@
 angular.module('starter.LoginCtrl', [])
-.controller('LoginCtrl', function($scope,$rootScope,$stateParams, $location,$cordovaFacebook, $cordovaGooglePlus, $ionicLoading,$cordovaGeolocation) {
+.controller('LoginCtrl', function($scope,$rootScope,$stateParams, $location,$cordovaFacebook, $cordovaGooglePlus, $ionicLoading,$cordovaGeolocation, User) {
  console.log("login ctrl ");
- 	$scope.visitanteLogin = function () {
-                    $location.path('/app/category');
+ 	
+  $scope.visitanteLogin = function () {
+      $location.path('/app/category');
  }
+
+  // console.log( "user " + $scope.user);
+  // console.log( "user nombre " + $scope.nombre);
+  // console.log( "user text " + $scope.text);
+
+if ($rootScope.user === undefined){
+  $rootScope.user = {
+              nombre : '',
+              apellido: '',
+              userName : '',
+              password: '',
+              password2 :'',
+              correo:''
+          };
+}
+/*
+$scope.register = function () {
+  
+  // console.log( "user " + $scope.user.nombre);
+  $location.path('/app/registerConfirm');
+}
+*/
+  $scope.newUser = function () {
+
+      console.log("nombre " + $rootScope.user.nombre);
+      var usuario = {"usrNombre" :$scope.user.userName, "usrPassword" : $scope.user.password , "usrCreadoPor": "app", "usrNombre2": $scope.user.nombre +" "+$scope.user.apellido};
+      $scope.allCategories = User.newUser(usuario).then(function(response){
+        $scope.response =  response;
+          console.log( "result " + $scope.response);
+          // console.log(  $scope.categories );
+        
+      });
+      
+      // $location.path('app.profile');
+   }
+
+
+
+    $scope.registerUser = function () {
+
+            if ($scope.user.email && $scope.user.password){
+
+                $scope.show();
+
+            ref.createUser({
+                email: $scope.user.email,
+                password: $scope.user.password
+            }, function (error) {
+                if (error === null) {
+                    console.log("User created successfully");
+
+                    ref.authWithPassword({
+                        email: $scope.user.email,
+                        password: $scope.user.password
+                    }, function (error, authData) {
+                        if (error) {
+                            console.log("Login Failed!", error);
+                            $scope.hide()
+                        } else {
+                            console.log("Authenticated successfully with payload:", authData);
+                            $scope.hide()
+
+
+                            function authDataCallback(authData) {
+                                if (authData) {
+                                    console.log("User " + authData.uid + " is logged in with " + authData.provider);
+                                    $scope.myUser = authData;
+                                    $scope.hide()
+                                    $ionicPopup.alert({
+                                        title: 'Register Success!',
+                                        template: 'logged in as ' + $scope.myUser.password.email
+                                    })
+                                } else {
+                                    console.log("User is logged out");
+                                    $scope.hide()
+                                }
+                            }
+
+                            // Register the callback to be fired every time auth state changes
+                            ref.onAuth(authDataCallback);
+                        }
+                    });
+
+                } else {
+                    $scope.hide();
+                    console.log("Error creating user:", error);
+                    $ionicPopup.alert({
+                        title: 'Error creating user!',
+                        template: error
+                    })
+                }
+            })
+        }
+            else{
+                $ionicPopup.alert({
+                    title: 'Invalid Parameters',
+                    template: 'Please fill both Fields above.'
+                })
+            }
+
+        };
 
 
  /*

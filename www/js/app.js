@@ -5,10 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic', 'ngCordova','ionic-material', 'ionMdInput',
                                     'starter.MenuCtrl', 'starter.LoginCtrl', 'starter.CategoryCtrl', 
-                                    'starter.ShopCtrl', 'starter.ProductCtrl','starter.CategoryServices', 
+                                    'starter.ShopCtrl', 'starter.ProductCtrl','starter.CategoryServices', 'starter.UserServices', 
                                     'starter.ShopServices' , 'starter.ProductServices', 'starter.ProfileCtrl' ])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform , $rootScope) {
+    $rootScope.restUrl = "http://localhost:8080/SomosGlobal/webresources/";
+    // $rootScope.restUrl = "http://192.168.0.103:8080/SomosGlobal/webresources/";
+
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -27,7 +30,7 @@ angular.module('starter', ['ionic', 'ngCordova','ionic-material', 'ionMdInput',
 })
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-
+    
     // Turn off caching for demo simplicity's sake
     $ionicConfigProvider.views.maxCache(0);
 
@@ -35,8 +38,6 @@ angular.module('starter', ['ionic', 'ngCordova','ionic-material', 'ionMdInput',
     // Turn off back button text
     $ionicConfigProvider.backButton.previousTitleText(false);
     */
-
-console.log("config");
 
     $stateProvider
 
@@ -51,6 +52,38 @@ console.log("config");
         url: '/login',
         templateUrl: 'templates/login.html',
         controller: 'LoginCtrl'
+    })
+
+    .state('app.register', {
+        url: '/register',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/register.html',
+                controller: 'LoginCtrl'
+            }
+            
+
+        }
+    })
+
+    .state('app.registerConfirm', {
+        url: '/registerConfirm',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/register-confirm.html',
+                controller: 'LoginCtrl'
+            }
+        }
+    })
+
+    .state('app.registerTerms', {
+        url: '/registerTerms',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/register-terms.html',
+                controller: 'LoginCtrl'
+            }
+        }
     })
 
     .state('app.profile', {
@@ -115,7 +148,7 @@ console.log("config");
             }
         }
     })
-
+    
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');
 });

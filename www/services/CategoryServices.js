@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('starter.CategoryServices', [])
-.factory('Categories', function($http) {
+.factory('Categories', function($http, $rootScope) {
 var categories;
 /*
   var categories = [{
@@ -55,13 +55,13 @@ var categories;
   }];
 */
   return {
-    all: function() {
-      return categories;
-    },
+    // all: function() {
+    //   return categories;
+    // },
 
     getCategories: function(){
       // return $http.get("http://localhost:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria", {
-        return $http.get("http://192.168.0.103:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria"
+        return $http.get($rootScope.restUrl+"com.somosglobal.rest.categoria"
           // , {
           //       headers: {
           //           'Content-Type': 'application/json' , 
@@ -72,13 +72,13 @@ var categories;
           //     }
               ).then(function(response){
                 console.log(response.data);
-        categories = response.data;
-        return categories;
+                categories = response.data;
+                return categories;
       });
     },
     getSubCategoriesNivel1: function(catId){
       // return $http.get("http://localhost:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria", {
-        return $http.get("http://192.168.0.103:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria/subcategory/1/"+catId
+        return $http.get($rootScope.restUrl+"com.somosglobal.rest.categoria/subcategory/1/"+catId
           // , {
           //       headers: {
           //           'Content-Type': 'application/json' , 
@@ -89,13 +89,13 @@ var categories;
           //     }
               ).then(function(response){
                 console.log(response.data);
-        categories = response.data;
-        return categories;
+                categories = response.data;
+                return categories;
       });
     },
     getSubCategoriesNivel2: function(catId){
       // return $http.get("http://localhost:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria", {
-        return $http.get("http://192.168.0.103:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria/subcategory/2/"+catId
+        return $http.get($rootScope.restUrl+"com.somosglobal.rest.categoria/subcategory/2/"+catId
           // , {
           //       headers: {
           //           'Content-Type': 'application/json' , 
@@ -106,20 +106,20 @@ var categories;
           //     }
               ).then(function(response){
                 console.log(response.data);
-        categories = response.data;
-        return categories;
+                categories = response.data;
+                return categories;
       });
     },
     remove: function(id) {
-      categories.splice(categories.indexOf(id), 1);
+      // categories.splice(categories.indexOf(id), 1);
     },
-    get: function(catId) {
+    /*get: function(catId) {
       for (var i = 0; i < categories.length; i++) {
         if (categories[i].id === parseInt(catId)) {
           return categories[i];
         }
       }
       return null;
-    }
+    }*/
   };
 });

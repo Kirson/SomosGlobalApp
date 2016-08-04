@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('starter.ShopServices', [])
-.factory('Shops', function($http) {
+.factory('Shops', function($http , $rootScope) {
 /*
 var str ="";
 for (var i = 1; i < 21; i++) {
@@ -199,11 +199,11 @@ var shops = JSON.parse( "["+str +"]" );
     },
      getLocales: function(shopId){
       // return $http.get("http://localhost:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria", {
-        return $http.get("http://localhost:8080/SomosGlobal/webresources/com.somosglobal.rest.actor/actor/"+shopId
+        return $http.get($rootScope.restUrl+"com.somosglobal.rest.actor/actor/"+shopId
               ).then(function(response){
                 console.log(response.data);
-        shops = response.data;
-        return shops;
+                shops = response.data;
+                return shops;
       });
     },
   };
