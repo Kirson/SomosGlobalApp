@@ -1,8 +1,39 @@
 angular.module('starter.LoginCtrl', [])
-.controller('LoginCtrl', function($scope,$rootScope,$stateParams, $location,$cordovaFacebook, $cordovaGooglePlus, $ionicLoading,$cordovaGeolocation, User) {
+.controller('LoginCtrl', function($scope,$rootScope,$stateParams, $location,$cordovaFacebook, $cordovaGooglePlus, $ionicLoading,$cordovaGeolocation, User, $ionicPopup) {
  console.log("login ctrl ");
- 	$scope.login = function () {
-      $location.path('/app/profile');
+
+  if ($rootScope.user === undefined){
+    $rootScope.user = {
+                nombre : '',
+                apellido: '',
+                userName : '',
+                password: '',
+                password2 :'',
+                correo:''
+            };
+  }
+ 
+ /* se debería mover esto a una clase Util */
+ // An alert dialog
+ 
+  $scope.login = function () {
+      // console.log("nombre " + $rootScope.user.nombre);
+      // var usuario = {"usrNombre" :$scope.user.userName, "usrPassword" : $scope.user.password};
+
+      User.getUserByUser($scope.user.userName, $scope.user.password ).then(function(response){
+        console.log( "result " + response);        
+        if (response){
+          $location.path('/app/profile');
+          // console.log( "login true" );        
+        }else{
+          $ionicPopup.alert({
+           title: 'Información',
+           template: 'datos incorrectos'
+         });
+          console.log( "login false" );        
+        }
+      });
+      // $location.path('/app/profile');
  }
 
 
@@ -10,32 +41,11 @@ angular.module('starter.LoginCtrl', [])
       $location.path('/app/category');
  }
 
-  // console.log( "user " + $scope.user);
-  // console.log( "user nombre " + $scope.nombre);
-  // console.log( "user text " + $scope.text);
-
-if ($rootScope.user === undefined){
-  $rootScope.user = {
-              nombre : '',
-              apellido: '',
-              userName : '',
-              password: '',
-              password2 :'',
-              correo:''
-          };
-}
-/*
-$scope.register = function () {
-  
-  // console.log( "user " + $scope.user.nombre);
-  $location.path('/app/registerConfirm');
-}
-*/
-  $scope.newUser = function () {
+ $scope.newUser = function () {
 
       console.log("nombre " + $rootScope.user.nombre);
       var usuario = {"usrNombre" :$scope.user.userName, "usrPassword" : $scope.user.password , "usrCreadoPor": "app", "usrNombre2": $scope.user.nombre +" "+$scope.user.apellido};
-      $scope.allCategories = User.newUser(usuario).then(function(response){
+      User.newUser(usuario).then(function(response){
         $scope.response =  response;
           console.log( "result " + $scope.response);
           // console.log(  $scope.categories );

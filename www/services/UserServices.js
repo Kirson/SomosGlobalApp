@@ -13,7 +13,7 @@ angular.module('starter.UserServices', [])
       
     },
     newUser: function(usuario){
-      console.log("usuario " + usuario);
+      // console.log("usuario " + usuario);
       // return $http.get("http://localhost:8080/SomosGlobal/webresources/com.somosglobal.rest.categoria", {
         return $http.post($rootScope.restUrl+"com.somosglobal.rest.usuario/",
         usuario
@@ -41,6 +41,14 @@ angular.module('starter.UserServices', [])
                 return users;
       });
     },
+    getUserByUser: function(user, pass){
+        console.log("user on service " + user +" "+ pass);
+        return $http.get($rootScope.restUrl+"com.somosglobal.rest.usuario/usuario/"+user+"/"+pass
+              // {params: {"user": user, "pass": pass} }
+              ).then(function(response){
+                return response.data;
+              });
+    }
   };
 });
 
