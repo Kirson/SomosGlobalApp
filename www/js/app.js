@@ -9,7 +9,7 @@ angular.module('starter', ['ionic', 'ngCordova','ionic-material', 'ionMdInput',
                                     'starter.ShopServices' , 'starter.ProductServices', 'starter.ProfileCtrl' ])
 
 .run(function($ionicPlatform , $rootScope) {
-    $rootScope.restUrl = "http://localhost:8080/SomosGlobal/webresources/";
+    $rootScope.restUrl = "http://186.5.121.17:9090//SomosGlobal/webresources/";
     // $rootScope.restUrl = "http://192.168.0.103:8080/SomosGlobal/webresources/";
 
   $ionicPlatform.ready(function() {
