@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic', 'ngCordova','ionic-material', 'ionMdInput',
-                                    'starter.MenuCtrl', 'starter.LoginCtrl', 'starter.CategoryCtrl', 
+                                    'starter.MenuCtrl', 'starter.LoginCtrl', 'starter.CategoryCtrl', 'starter.MapCtrl',
                                     'starter.ShopCtrl', 'starter.ProductCtrl','starter.CategoryServices', 'starter.UserServices', 
                                     'starter.ShopServices' , 'starter.ProductServices', 'starter.ProfileCtrl' ])
 
@@ -148,6 +148,18 @@ angular.module('starter', ['ionic', 'ngCordova','ionic-material', 'ionMdInput',
             }
         }
     })
+
+    .state('app.map', {
+        url: '/map',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/android-map-connect.html',
+                controller: 'MapCtrl'
+            }
+        }
+    })
+
+    
     
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');

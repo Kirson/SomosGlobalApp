@@ -16,6 +16,9 @@ angular.module('starter.LoginCtrl', [])
  /* se debería mover esto a una clase Util */
  // An alert dialog
  
+ $scope.map = function () {
+$location.path('/app/map');
+}
   $scope.login = function () {
       // console.log("nombre " + $rootScope.user.nombre);
       // var usuario = {"usrNombre" :$scope.user.userName, "usrPassword" : $scope.user.password};

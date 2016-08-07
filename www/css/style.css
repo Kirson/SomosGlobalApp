@@ -103,3 +103,11 @@ position: initial;
     width: 209px;
 }
 
+#maps {
+    width: 90%;
+    height: 90%;
+  }
+  
+  .scroll {
+    height: 100%;
+  }
